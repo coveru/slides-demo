@@ -4,11 +4,12 @@
     width: 450px; 
     height: 299px;
     margin: 20px auto;
-    overflow: hidden; 
+    overflow: hidden;    
 }
 .images{
     display: flex;
     position: relative;
+    
 }
 .images > img{
     width: 100%;
@@ -27,4 +28,8 @@
 }
 .images > img.enter{
     transform: translateX(100%);
+}
+
+.wrapper{  
+    text-align:center;  
 }

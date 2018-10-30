@@ -4,17 +4,23 @@ initialize()
 
 
 //开始轮播
-setInterval(() => {
+var timerId=setInterval(() => {
     makeLeave(getImage(n))
         .one('transitionend', (e) => {
             makeEnter($(e.currentTarget))
         })
     makeCurrent(getImage(n + 1))
     n += 1
-}, 3000)
+}, 2000)
 
+//添加鼠标事件
+$('.window').on('mouseenter', function() {
+    window.clearInterval(timerId)
+  })
 
-
+$('.window').on('mouseleave', function(){
+    timerId=setTimer()
+  })
 
 
 
@@ -62,3 +68,13 @@ function makeEnter($node) {
     $node.removeClass('leave').addClass('enter')
     return $node
 }
+function setTimer(){
+    return  setInterval(() => {
+           makeLeave(getImage(n))
+               .one('transitionend', (e) => {
+                   makeEnter($(e.currentTarget))
+               })
+           makeCurrent(getImage(n + 1))
+           n += 1
+       }, 2000)
+   }
