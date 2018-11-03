@@ -50,7 +50,7 @@ function bindEvents() {
   $('#buttons').on('click','button',function(e){
     let  $button = $(e.currentTarget)
     let  index = $button.index()
-    activeButton($button)
+    //activeButton($button)
     goToSlide(index)    
   })
 }
@@ -92,8 +92,8 @@ function makeFakeSlides() {
     $slides.prepend($lasttCopy)
 }
 
-function activeButton($button) {
+/*function activeButton($button) {
     $button
       .addClass('red')
       .siblings('.red').removeClass('red')
-  }
+  }*/
