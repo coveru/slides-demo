@@ -13,6 +13,21 @@ var timerId=setInterval(() => {
     n += 1
 }, 2000)
 
+//添加监听（用户不看页面时停止轮播）
+document.addEventListener('visibilitychange',function(){
+    if(document.hidden){
+        window.clearInterval(timerId)
+    }else{
+        timerId=setTimer()
+    }
+})
+
+
+
+
+
+
+
 //添加鼠标事件
 $('.window').on('mouseenter', function() {
     window.clearInterval(timerId)
